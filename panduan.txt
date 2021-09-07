@@ -1,0 +1,239 @@
+console.clear()
+
+// function person(name,age){ // function declaration biasa
+//   this.name = name
+//   this.age = age
+//   return 'My name is ' + this.name + '. I am ' + this.age + ' years old.'
+// }
+
+// console.log(person("Agus",30))
+
+// function Person(name,age){ // function constructor
+//     this.name = name
+//     this.age = age
+//     this.detail = function(){
+//       return this.name + ' ' + this.age
+//     }
+//   }
+
+// const p = new Person("Agus", 30)
+// console.log(p.detail())
+
+// class Person{ // class
+//   constructor(name,age){
+//     this.name = name
+//     this.age = age    
+//   }
+//   detail(){
+//       return this.name + ' ' + this.age
+//   }
+// }
+
+// const p = new Person("Agus",30)
+// console.log(p)
+// console.log(p.detail())
+
+// ACCESS MODIFIER (Private, Public)
+
+// function Barang(name,price,weight,color){
+//   //public property
+//   this.name = name 
+//   this.price = price
+//   //private property
+//   var weight = weight
+//   var color = color
+//   //public method
+//   this.detail = function(){
+//     return `${this.name} , ${this.price}`
+//   }
+//   //private method
+//   function showWeightColor(){
+//     return weight + ' ' + color
+//   }
+// }
+
+// const b = new Barang("Kursi", 200, 10, "hitam")
+// console.log(b.name)
+// console.log(b.weight)
+// console.log(b.detail())
+// console.log(b.showWeightColor())
+
+// => ENCAPSULATION (menggunakan access modifier)
+/*
+Encapsulation atau enkapsulasi adalah cara untuk membatasi akses langsung ke properti atau method dari sebuah objek.
+*/
+// class Ongkir{
+//   constructor(berat){
+//   var pajak = 500 // tidak pakai this
+//   var biaya = function(){ // tidak pakai this
+//     return berat * 1000
+//   }
+//   this.totalBiaya = function(){
+//     return biaya() + pajak
+//   }
+//   }
+// }
+
+// const ongkir = new Ongkir(5)
+// ongkir.pajak = 1000
+// console.log(ongkir.totalBiaya())
+
+// INHERITANCE (menggunakan key extends)
+/*
+Inheritance dalam OOP adalah sebuah proses dimana sebuah class mewariskan property dan methodnya ke class lain atau childnya.
+*/
+// class People{
+//   constructor(name,age){
+//     this.name = name
+//     this.age = age
+//     this.detail = function(){
+//       return this.name + ' ' + this.age
+//     }
+//   }
+// }
+
+// class Person extends People{
+//   constructor(name,age,job){
+//     super(name)
+//     this.age = 40
+//     this.job = job
+//   }
+// }
+// const people = new People("Agus",20)
+// const person = new Person("Agus",20,"Programmer")
+// console.log(people.name)
+// console.log(person.age)
+// console.log(person.job)
+
+// POLYMORPHISME (banyak bentuk)
+/*
+Polymorphism adalah kemampuan untuk membuat variabel, fungsi, atau objek yang memiliki banyak bentuk.
+*/
+
+// class People{
+//   constructor(name){
+//     this.name = name
+//   }
+//   greet(){
+//     return `Good morning ${this.name}`
+//   }
+// }
+
+// class Person extends People{
+//   constructor(name){
+//     super(name)
+//   }
+//   greet(){
+//     return `Selamat pagi ${this.name}`
+//   }
+// }
+
+// const p = new Person("Agus")
+// console.log(p.greet()) // Selamat pagi Agus, jika tidak ada method greet() di class Person, maka akan mereturn 'Good morning Agus'
+
+
+// ABSTRACTION
+/*
+Abstraction adalah sebuah teknik untuk menyembunyikan detail tertentu dari sebuah objek dan hanya menampilkan fungsionalitas atau fitur penting dari objek tersebut.
+*/
+
+// class Ongkir{
+//   constructor(berat){
+//   var pajak = 500 // tidak pakai this
+//   var biaya = function(){ // tidak pakai this
+//     return berat * 1000
+//   }
+//   this.totalBiaya = function(){
+//     return biaya() + pajak
+//   }
+//   }
+// }
+
+// const ongkir = new Ongkir(5)
+// console.log(ongkir.totalBiaya())
+
+// SETTER & GETTER
+// 1. SETTER
+/*
+Setter adalah method yang fungsinya khusus untuk mengubah nilai sebuah property.
+*/
+// class Product{
+//   constructor(name){
+//     this.name = null
+//   }
+//   set setName(value){
+//     // kita check datanya dulu sebelum mengubah property name
+    
+//     if(typeof(value) === "string"){
+//       this.name = value
+//     }else{
+//       this.name = null
+//     }
+//     return value
+//   }
+// }
+// let p = new Product()
+// p.setName = "Thinkpad" // ini akan mengubah nilai property name jadi Thinkpad
+// console.log(p.name)
+
+// 2. GETTER
+/*
+Getter adalah method yang fungsinya khusus untuk mengambil nilai sebuah property.
+*/
+// class Product{
+//   constructor(name){
+//     this.name = null
+//   }
+//   set setName(value){
+//     // kita check datanya dulu sebelum mengubah property name
+    
+//     if(typeof(value) === "string"){
+//       this.name = value
+//     }else{
+//       this.name = null
+//     }
+//     return value
+//   }
+//   get getName(){
+//     if(this.name === null) {
+//       return `value belum di set`
+//     }
+//     return this.name
+//   }
+// }
+// const thinkpad = new Product()
+// console.log(thinkpad.getName) // value belum di set
+// thinkpad.setName = "Thinkpad x230"
+// console.log(thinkpad.getName) // Thinkpad x230
+
+// OVERRIDING & OVERLOADING
+/*
+Override adalah fitur yang memungkinkan kamu membuat method di dalam kelas child yang nama methodnya sama dengan method di class parentnya.
+*/
+// class Product{
+//   constructor(name){
+//     this.name = name
+//   }
+//   getDetail(){
+//     return `product name is ${this.name}`
+//   }
+// }
+
+// class Laptop extends Product{
+//   constructor(name, brand){
+//     super(name);
+//     this.brand =  brand
+//   }
+//   getDetail(){
+//     return `product name is ${this.name} with brand ${this.brand}`
+//   }
+// }
+
+// const thinkpad = new Laptop("Thinkpad", "IBM")
+// console.log(thinkpad.getDetail())// product name is Thinkpad with brand IBM
+/*
+Overload ini adalah fitur untuk membuat dua fungsi atau lebih yang memiliki nama yang sama namun berbeda argument atau parameternya.
+Jadi dalam satu class kamu bisa membuat fungsi dengan nama yang sama.
+Gambar berikut adalah perbandingan antara overriding dan overloading yang di tulis dengan Java.
+Sayangnya javascript tidak di support dengan fitur overload.
+*/
