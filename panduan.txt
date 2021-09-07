@@ -237,3 +237,9 @@ Jadi dalam satu class kamu bisa membuat fungsi dengan nama yang sama.
 Gambar berikut adalah perbandingan antara overriding dan overloading yang di tulis dengan Java.
 Sayangnya javascript tidak di support dengan fitur overload.
 */
+
+
+SUMBER:
+https://medium.com/codeacademia/belajar-fundamental-opp-dengan-javascript-c1b721677ce9
+https://medium.com/easyread/penerapan-oop-dalam-javascript-part-1-98ed3a427e77
+https://blog.sibudi.net/javascript-dan-object-oriented-programming-oop/
