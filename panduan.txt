@@ -239,7 +239,8 @@ Sayangnya javascript tidak di support dengan fitur overload.
 */
 
 
-SUMBER:
+SUMBER/REFERENSI:
 https://medium.com/codeacademia/belajar-fundamental-opp-dengan-javascript-c1b721677ce9
 https://medium.com/easyread/penerapan-oop-dalam-javascript-part-1-98ed3a427e77
 https://blog.sibudi.net/javascript-dan-object-oriented-programming-oop/
+https://docs.google.com/presentation/d/1qRmLmla2Ru0WjIzwMKTNE7Zbyz-PJtTdXrWmX5ZbH5o/edit#slide=id.gbeaacd8668_0_355
