@@ -298,6 +298,27 @@ Sayangnya javascript tidak di support dengan fitur overload.
 // animal.weight = 10
 // console.log(animal.weight)
 
+// ALTERNATIVELY
+
+// class DataRepository {
+//    constructor() {
+//        this._data = [];
+//    }
+ 
+//    setData() {
+//        const response = /* tons of logical code to retrieve data */
+//        this._data = response.data
+//    }
+ 
+//    get data() {
+//        return this._data;
+//    }
+// }
+
+// const dr = new DataRepository()
+// console.log(dr.data)
+
+
 SUMBER/REFERENSI:
 https://medium.com/codeacademia/belajar-fundamental-opp-dengan-javascript-c1b721677ce9
 https://medium.com/easyread/penerapan-oop-dalam-javascript-part-1-98ed3a427e77
